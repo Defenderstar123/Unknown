@@ -21,6 +21,17 @@ body {
   align-items: center;
 }
 
+.yt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .form {
   font-family: "Poppins", sans-serif;
   position: absolute;

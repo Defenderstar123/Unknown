@@ -27,17 +27,22 @@
               <span class="button__text button__text--bis" id="loading"
                 >Search</span
               >
+                        <button className="yt" onclick="goToYT()">Go to YouTube</button>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script defer>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js").then(function () {
-          console.log("Service Worker Registered");
-        });
+      function goToYT() {
+        window.location.replace("https://youtube.com");
       }
+
+      // if ("serviceWorker" in navigator) {
+      //   navigator.serviceWorker.register("/sw.js").then(function () {
+      //     console.log("Service Worker Registered");
+      //   });
+      // }
     </script>
     <script defer src="/assets/main.js"></script>
     <script defer src="/assets/particles.js"></script>
