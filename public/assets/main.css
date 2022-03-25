@@ -22,13 +22,15 @@ body {
 }
 
 .yt {
+  
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
+  top: 60%;
+  margin-left: 47%;
+  -ms-transform: translateY(-60%);
   transform: translateY(-50%);
 }
 
