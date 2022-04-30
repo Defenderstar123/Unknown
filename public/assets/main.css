@@ -21,18 +21,6 @@ body {
   align-items: center;
 }
 
-.yt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  position: absolute;
-  top: 60%;
-  margin-left: 47%;
-  -ms-transform: translateY(-60%);
-  transform: translateY(-50%);
-}
-
 .form {
   font-family: "Poppins", sans-serif;
   position: absolute;
@@ -110,6 +98,15 @@ a:focus {
 
 text {
   font-family: "Poppins", sans-serif;
+}
+
+.yt {
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .button {
