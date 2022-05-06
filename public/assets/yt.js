@@ -138,17 +138,16 @@ $(document).ready(() => {
     });
   }
 
-  $("#search-bar").on("keyup", (e) => {
-    term = $(e.target).val();
+  $("#searchbtn").on("click", (e) => {
+    // term = $(e.target).val();
+    term = document.getElementById("search-bar").value;
 
     if (term.length > 3) {
-      // call API only if char length is > 3 (conserve API calls)
       callAPI(term).then(
         (response) => {
           createList(response.items).then(
-            // call function to create list of videos to display
             (success) => {
-              displayList(success); // list created, now display it on screen
+              displayList(success);
             },
             (error) => {
               console.log(error);
@@ -156,7 +155,13 @@ $(document).ready(() => {
           );
         },
         (error) => {
-          console.log(error.responseJSON.error.message, "error"); // error while getting videos
+          console.log(error.responseJSON.error.code);
+          if (error.responseJSON.error.code == 403) {
+            alert(
+              "Sorry, this project has exceeded the quota limit on the YouTube API. You can try to search again after some time."
+            );
+            window.location.reload();
+          }
         }
       );
       displayList(testdata);

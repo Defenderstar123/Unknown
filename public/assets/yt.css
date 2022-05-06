@@ -1,3 +1,13 @@
+.search-feature {
+  display: flex;
+}
+
+#searchbtn {
+  margin-top: auto;
+  height: 6vh;
+  width: 10vw;
+}
+
 .thumb-small {
   object-fit: cover;
   width: 200px;
