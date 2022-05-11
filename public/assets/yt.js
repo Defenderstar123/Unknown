@@ -167,6 +167,36 @@ $(document).ready(() => {
       displayList(testdata);
     }
   });
+  
+    $("#searchbtn").on("click", (e) => {
+    // term = $(e.target).val();
+    term = document.getElementById("search-bar").value;
+
+    if (term.length > 3) {
+      callAPI(term).then(
+        (response) => {
+          createList(response.items).then(
+            (success) => {
+              displayList(success);
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+        },
+        (error) => {
+          console.log(error.responseJSON.error.code);
+          if (error.responseJSON.error.code == 403) {
+            alert(
+              "Sorry, this project has exceeded the quota limit on the YouTube API. You can try to search again after some time."
+            );
+            window.location.reload();
+          }
+        }
+      );
+      displayList(testdata);
+    }
+  });
 
   function playNewVideo(id, title, desc) {
     let iframe = $("#ytplayer");
