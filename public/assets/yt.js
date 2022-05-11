@@ -167,9 +167,11 @@ $(document).ready(() => {
       displayList(testdata);
     }
   });
-  
-    $("#searchbtn").on("click", (e) => {
-    // term = $(e.target).val();
+
+  const searchform = document.getElementById("searchform");
+
+  searchform.addEventListener("submit", (event) => {
+    event.preventDefault();
     term = document.getElementById("search-bar").value;
 
     if (term.length > 3) {
