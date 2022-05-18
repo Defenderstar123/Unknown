@@ -139,6 +139,15 @@ text {
   transform: translateX(-1em);
   opacity: 0;
 }
+
+.footer {   
+    position: fixed;
+    text-align: center;
+    align-content: center;
+    bottom: 10px;
+  color: white;
+}
+
 .button__mask {
   display: block;
   position: absolute;
