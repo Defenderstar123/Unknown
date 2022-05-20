@@ -18,6 +18,14 @@ const http = require("http"),
       res.setHeader("Content-Type", "text/html");
       res.write(fs.readFileSync(__dirname + "/public/youtube.html", "utf-8"));
     }
+
+    if (req.url == "/framebrowser") {
+      res.setHeader("Content-Type", "text/html");
+      res.write(
+        fs.readFileSync(__dirname + "/public/framebrowser.html", "utf-8")
+      );
+    }
+
     // HTTP(S) proxy.
     if (req.url.startsWith(config.prefix)) return proxy.http(req, res);
 
@@ -31,10 +39,7 @@ const http = require("http"),
       .split("&")
       .forEach(
         (query) =>
-          (req.query[query.split("=")[0]] = query
-            .split("=")
-            .slice(1)
-            .join("=")),
+          (req.query[query.split("=")[0]] = query.split("=").slice(1).join("="))
       );
 
     if (
@@ -66,7 +71,7 @@ const http = require("http"),
       res.end(
         fs
           .readFileSync(__dirname + "/lib/d.html", "utf-8")
-          .replace("%ERR%", `Cannot ${req.method} ${req.pathname}`),
+          .replace("%ERR%", `Cannot ${req.method} ${req.pathname}`)
       )
     );
 
@@ -90,7 +95,7 @@ const http = require("http"),
           key: fs.readFileSync("./ssl/default.key"),
           cert: fs.readFileSync("./ssl/default.crt"),
         },
-        app,
+        app
       )
     : http.createServer(app);
 
@@ -98,5 +103,5 @@ const http = require("http"),
 proxy.ws(server);
 
 server.listen(process.env.PORT || config.port, () =>
-  console.log(`${config.ssl ? "https://" : "http://"}0.0.0.0:${config.port}`),
+  console.log(`${config.ssl ? "https://" : "http://"}0.0.0.0:${config.port}`)
 );

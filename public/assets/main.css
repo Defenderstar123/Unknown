@@ -103,7 +103,16 @@ text {
 .yt {
   margin: 0;
   position: absolute;
-  top: 55%;
+  top: 57%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.framebrowser {
+  margin: 0;
+  position: absolute;
+  top: 62%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -140,11 +149,11 @@ text {
   opacity: 0;
 }
 
-.footer {   
-    position: fixed;
-    text-align: center;
-    align-content: center;
-    bottom: 10px;
+.footer {
+  position: fixed;
+  text-align: center;
+  align-content: center;
+  bottom: 10px;
   color: white;
 }
 
