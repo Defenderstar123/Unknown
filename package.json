@@ -6,15 +6,7 @@
   "scripts": {
     "start": "node server.js",
   },
-  "author": "Dhaval Pandey",
-  "license": "MIT",
   "dependencies": {
      "ws": "^7.4.3"
   },
-  "optionalDependencies": {
-    "fsevents": "2.1.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.14"
-  }
 }
